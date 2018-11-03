@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Detail extends React.Component {
+class Detail extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div>city</div>
+            <div>detail</div>
         )
     }
 }

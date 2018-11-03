@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Home extends React.Component {
+class Home extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div>city</div>
+            <div>home</div>
         )
     }
 }

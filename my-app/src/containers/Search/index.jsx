@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class User extends React.Component {
+class Search extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div>city</div>
+            <div>search</div>
         )
     }
 }
-export default User;
+export default Search;
