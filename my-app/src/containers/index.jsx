@@ -7,8 +7,24 @@ import Home from './Home';
 import Search from './Search';
 import User from './User';
 import NotFound from './404'
+import LocalStore from '../util/localStore'
+import {CITYNAME} from '../config/localStoreKey';
 
 class App extends Component {
+  constructor(props, context) {
+      super(props);
+      this.state = {
+          initDone: false, //是否显示加载中
+      }
+  }
+  componentDidMount() {
+      let cityName = LocalStore.getItem(CITYNAME);
+      if (cityName === '') {
+          cityName = '北京';
+      }
+
+      //城市信息存储到redux中
+  }
   render() {
       return (
           <div>
