@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './style.less';
+import './style.css';
 
 class HomeHeader extends Component {
     constructor(props) {
