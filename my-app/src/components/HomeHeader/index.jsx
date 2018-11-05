@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
+import { Input, Icon } from 'antd';
 
 class HomeHeader extends Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class HomeHeader extends Component {
        return (
            <div className="head">
                <div className="city">深圳</div>
-               <div className="input"><input></input></div>
-               <div className="user">用户中心</div>
+               <div className="input"><Icon type="search" /><Input className="search" placeholder="请输入关键字"></Input></div>
+               <div className="user"><Icon type="home" /></div>
            </div>
        )
     };
