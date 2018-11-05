@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HomeHeader from '../../components/HomeHeader'
 
 class Home extends Component {
     constructor(props) {
@@ -6,7 +7,9 @@ class Home extends Component {
     }
     render() {
         return (
-            <div>home</div>
+            <div>
+                <HomeHeader />
+            </div>
         )
     }
 }

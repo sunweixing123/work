@@ -28,7 +28,6 @@ class App extends Component {
   render() {
       return (
           <div>
-              <h1>header</h1>
               <Router history={this.props.history}>
                   <React.Fragment>
                       <Switch>
@@ -42,7 +41,6 @@ class App extends Component {
                       </Switch>
                   </React.Fragment>
               </Router>
-              <h1>footer</h1>
           </div>
       )
   }
