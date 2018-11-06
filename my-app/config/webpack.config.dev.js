@@ -318,6 +318,20 @@ module.exports = {
           // In production, they would get copied to the `build` folder.
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
+          // {
+          //   test: /\.(js|jsx)$/,
+          //   exclude: /node_modules/,
+          //   loader: 'babel',
+          //   query: {
+          //     presets: ['react', 'es2015'],
+          //     plugins: [
+          //       ['import', {
+          //         libraryName: 'antd',
+          //         style: 'css'
+          //       }]
+          //     ]
+          //   }
+          // },
           {
             // Exclude `js` files to keep "css" loader working as it injects
             // its runtime that would otherwise be processed through "file" loader.
