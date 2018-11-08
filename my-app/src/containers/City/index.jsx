@@ -20,7 +20,13 @@ class City extends Component {
     // }
     render() {
         return (
-            <div>选择城市</div>
+            <div className="cityDetail">
+              <h1>选择城市</h1>
+              <div>北京</div>
+              <div>上海</div>
+              <div>天津</div>
+              <div>广东</div>
+            </div>
         )
     }
 }
