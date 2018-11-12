@@ -27,7 +27,8 @@ class City extends Component {
               <div>天津</div>
               <div>广东</div>
               <div>黑龙江</div>
-              <div>大庆·</div>
+              <div>大庆</div>
+              <div>打卡</div>
             </div>
         )
     }
