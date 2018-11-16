@@ -29,6 +29,7 @@ class City extends Component {
               <div>黑龙江</div>
               <div>大庆</div>
               <div>打卡</div>
+              <div>打卡1</div>
             </div>
         )
     }
