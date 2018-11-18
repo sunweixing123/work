@@ -23,7 +23,7 @@ class App extends Component {
           cityName = '北京';
       }
 
-      //城市信息存储到redux中
+    //   城市信息存储到redux中
 
     //   this.props.userInfoActions.updata({
     //       cityName: cityName;
@@ -41,6 +41,7 @@ class App extends Component {
 //           userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
 //       }
 //   }
+
   render() {
       return (
           <div>
