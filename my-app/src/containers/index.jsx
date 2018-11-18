@@ -24,7 +24,23 @@ class App extends Component {
       }
 
       //城市信息存储到redux中
+
+    //   this.props.userInfoActions.updata({
+    //       cityName: cityName;
+    //   })
   }
+
+  mapStateToProps(state) {
+      return {
+
+      }
+  }
+
+//   mapDispatchToProps(dispatch) {
+//       return {
+//           userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
+//       }
+//   }
   render() {
       return (
           <div>
@@ -45,4 +61,8 @@ class App extends Component {
       )
   }
 }
+// export default connect(
+//     mapStateToProps,
+//     mapDispatchToProps,
+// )(App)
 export default App;

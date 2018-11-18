@@ -18,18 +18,15 @@ class City extends Component {
 
     //     }
     // }
+    callBack() {
+      window.history.back()
+    }
     render() {
         return (
             <div className="cityDetail">
+              <div onClick={this.callBack}>返回</div>
               <h1>选择城市</h1>
               <div>北京</div>
-              <div>上海</div>
-              <div>天津</div>
-              <div>广东</div>
-              <div>黑龙江</div>
-              <div>大庆</div>
-              <div>打卡</div>
-              <div>打卡1</div>
             </div>
         )
     }
