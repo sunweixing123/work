@@ -27,6 +27,7 @@ class City extends Component {
               <div onClick={this.callBack}>返回</div>
               <h1>选择城市</h1>
               <div>北京</div>
+              <div>深圳</div>
             </div>
         )
     }
