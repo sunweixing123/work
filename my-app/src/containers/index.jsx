@@ -4,7 +4,7 @@ import  {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import * as userInfoActionsFromOtherFile from '../actions/userinfo';
 import City from './City'; //城市页
-import Detail from './Detail';
+import Detail from './Detail'; //详情页
 import Home from './Home'; //首页
 import Search from './Search'; //搜索
 import User from './User'; //用户
