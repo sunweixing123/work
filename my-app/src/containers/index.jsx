@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-// import { } from 'react-router';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import City from './City';
+import  {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import * as userInfoActionsFromOtherFile from '../actions/userinfo';
+import City from './City'; //城市页
 import Detail from './Detail';
-import Home from './Home';
-import Search from './Search';
-import User from './User';
-import NotFound from './404'
+import Home from './Home'; //首页
+import Search from './Search'; //搜索
+import User from './User'; //用户
+import NotFound from './404' //error页
 import LocalStore from '../util/localStore'
 import {CITYNAME} from '../config/localStoreKey';
 
@@ -25,22 +27,10 @@ class App extends Component {
 
     //   城市信息存储到redux中
 
-    //   this.props.userInfoActions.updata({
-    //       cityName: cityName;
-    //   })
+      this.props.userInfoActions.updata({
+          cityName: cityName
+      })
   }
-
-  mapStateToProps(state) {
-      return {
-
-      }
-  }
-
-//   mapDispatchToProps(dispatch) {
-//       return {
-//           userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
-//       }
-//   }
 
   render() {
       return (
@@ -62,8 +52,20 @@ class App extends Component {
       )
   }
 }
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps,
-// )(App)
-export default App;
+
+function mapStateToProps(state) {
+    return {
+
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(App)
+// export default App;
