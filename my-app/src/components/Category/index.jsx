@@ -5,18 +5,17 @@ class Category extends Component {
   constructor(props, context) {
     super(props, context);
     this.state ={
-      index: 0,
+      idx: 0,
     }
   }
 
   render() {
     var opt = {
       auto: 2000,
-      // callback: function(index) {
-      //   this.setState({
-      //     index: index,
-      //   })
-      // }.bind(this),
+      callback: (index) => {
+        console.log(index);
+        // this.setState({idx: index}) //为社么不能设置state
+      }
     }
     return (
       <div>
@@ -50,7 +49,7 @@ class Category extends Component {
           </div>
         </ReactSwipe>
         <div>
-          {this.state.index}
+          {this.state.idx}
         </div>
       </div>
     )
