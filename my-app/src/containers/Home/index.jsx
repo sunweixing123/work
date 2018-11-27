@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import HomeHeader from '../../components/HomeHeader'
 
 class Home extends Component {
@@ -8,9 +9,23 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <HomeHeader />
+                <HomeHeader cityName={this.props.userinfo.cityName} />
             </div>
         )
     }
 }
-export default Home;
+// export default Home;
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userinfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Home)

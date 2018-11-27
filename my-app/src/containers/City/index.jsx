@@ -5,8 +5,6 @@ class City extends Component {
         super(props);
     }
     componentDidMount() {
-        console.log(this.props.userinfo);
-        console.log(this.props.userInfoActions);
     }
     // mapStateToProps(state) {
     //     return {

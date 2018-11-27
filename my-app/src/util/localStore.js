@@ -9,7 +9,7 @@ export default {
                 console.error('localStorage.getItem报错', ex.message);
             }
         } finally {
-            return false;
+            return value;
         }
     },
     setItem(key, value) {

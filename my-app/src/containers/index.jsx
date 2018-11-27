@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import  {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import * as userInfoActionsFromOtherFile from '../actions/userinfo';
@@ -21,13 +21,13 @@ class App extends Component {
   }
   componentDidMount() {
       let cityName = LocalStore.getItem(CITYNAME);
-      if (cityName === '') {
+      if (cityName === null) {
           cityName = '北京';
       }
 
     //   城市信息存储到redux中
 
-      this.props.userInfoActions.updata({
+      this.props.userInfoActions.update({
           cityName: cityName
       })
   }
