@@ -42,6 +42,7 @@ class City extends Component {
 
 
       //跳转到首页
+      window.history.back();
     }
     render() {
         return (
