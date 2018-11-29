@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import Header from '../../components/Header';
+import CityList from '../../components/CityList';
 
 class City extends Component {
-    constructor(props) {
-        super(props);
-    }
     componentDidMount() {
     }
     // mapStateToProps(state) {
@@ -22,10 +21,13 @@ class City extends Component {
     render() {
         return (
             <div className="cityDetail">
-              <div onClick={this.callBack}>返回</div>
+              {/* <div onClick={this.callBack}>返回</div>
               <h1>选择城市</h1>
               <div>北京</div>
-              <div>深圳</div>
+              <div>深圳</div> */}
+              <Header title="选择城市" />
+              <CityList />
+
             </div>
         )
     }
