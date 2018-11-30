@@ -61,6 +61,7 @@ class City extends Component {
 }
 // export default City;
 
+//绑定redux
 function mapStateToProps(state) {
     return {
         userinfo: state.userinfo
