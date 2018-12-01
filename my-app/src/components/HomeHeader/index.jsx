@@ -15,7 +15,9 @@ class HomeHeader extends Component {
                    <div className="city">{this.props.cityName}</div>
                </Link>
                <div className="input"><Icon type="search" /><Input className="search" placeholder="请输入关键字"></Input></div>
-               <div className="user"><Icon type="home" /></div>
+               <Link to="/dnd">
+                    <div className="user"><Icon type="home" /></div>
+               </Link>
            </div>
        )
     };
