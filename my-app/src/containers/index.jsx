@@ -10,6 +10,8 @@ import Search from './Search'; //搜索
 import User from './User'; //用户
 import NotFound from './404' //error页
 import Dnd from './reactDnd'; //拖拽组件
+import Context from './beautifulDnd/context'
+import Beauty from './beautifulDnd/BeautyDnd'
 import LocalStore from '../util/localStore'
 import {CITYNAME} from '../config/localStoreKey';
 
@@ -45,7 +47,7 @@ class App extends Component {
                           <Route path="/detail" component={Detail}></Route>
                           <Route path="/search" component={Search}></Route>
                           <Route path="/user" component={User}></Route>
-                          <Route path="/dnd" component={Dnd}></Route>
+                          <Route path="/dnd" component={Beauty}></Route>
                           <Route component={NotFound}></Route>
                       </Switch>
                   </React.Fragment>
