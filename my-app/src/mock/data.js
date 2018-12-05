@@ -6,6 +6,8 @@ const router = new Router();
 
 const data1 = require('./home/data1.js');
 router.get('/api/homed', (ctx, next) => {
+  ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  ctx.set('Access-Control-Allow-Credentials', 'true');
   ctx.body = data1;
 })
 

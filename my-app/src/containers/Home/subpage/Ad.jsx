@@ -12,8 +12,10 @@ class Ad extends Component {
     const result = getdata1();
     console.log(result);
     result.then((res) => {
-      console.log(res);
-    });
+      return res.json();
+    }).then((json) => {
+      console.log(json);
+    })
   }
   render() {
     return (
