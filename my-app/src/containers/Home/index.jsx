@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import HomeHeader from '../../components/HomeHeader'
-import Category from '../../components/Category'
-import Ad from './subpage/Ad'
+import { connect } from 'react-redux';
+import HomeHeader from '../../components/HomeHeader';
+import Category from '../../components/Category';
+import Ad from './subpage/Ad';
+import PageList from './subpage/List';
 
 class Home extends Component {
     render() {
@@ -12,6 +13,7 @@ class Home extends Component {
                 <Category />
                 <div style={{height: '15px'}}></div>
                 <Ad />
+                <PageList />
             </div>
         )
     }

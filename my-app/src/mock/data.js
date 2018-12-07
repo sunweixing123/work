@@ -24,6 +24,13 @@ router.get('/api/homed2', (ctx, next) => {
   }
 })
 
+const list = require('./home/list');
+router.get('/api/list', (ctx,next) => {
+  ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  ctx.set('Access-Control-Allow-Credentials', 'true');
+  ctx.body = list;
+})
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(3001, () => {
