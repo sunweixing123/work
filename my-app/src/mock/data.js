@@ -31,6 +31,13 @@ router.get('/api/list', (ctx,next) => {
   ctx.body = list;
 })
 
+const dataTest1 = require('./home/data2');
+router.get('/api/1', (ctx,next) => {
+  ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  ctx.set('Access-Control-Allow-Credentials', 'true');
+  ctx.body = dataTest1;
+})
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(3001, () => {
