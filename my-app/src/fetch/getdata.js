@@ -1,34 +1,12 @@
 import 'whatwg-fetch';
 import 'es6-promise';
+import {get} from './get';
 
 export function getData() {
   // api/1  获取字符串
-  var result = fetch('/api/1', {
-    credentials: 'include',
-    headers: {
-      'Accept': 'application/json, text/plain, */*'
-    }
-  });
+  const result = get('/api/1');
+  return result;
 
-  result.then(res => {
-    return res.text()
-  }).then(text => {
-    console.log(text);
-  })
-
-  //api/2  获取json
-  var result1 = fetch('/api/2', {
-    credentials: 'include',
-    headers: {
-      'Accept': 'application/json, text/plain, */*'
-    }
-  })
-
-  result1.then(res => {
-    return res;
-  }).then(json => {
-    console.log(json)
-  })
 }
 
 export function postData() {
