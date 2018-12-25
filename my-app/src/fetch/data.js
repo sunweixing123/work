@@ -1,5 +1,5 @@
 import { get } from './get.js';
-import { post } from './post.js';
+// import { post } from './post.js';
 
 export function getData() {
   var result = get('/api/1')
