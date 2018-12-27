@@ -8,19 +8,23 @@
 </head>
 <body>
     <script>
-        var arr = [1,2,3,[1,2,3[1,2,3]],1,2,3,[1,2],[1,5]];
+        var arr = [1, 2, 3, [1, 2, 3, [1,2,3]],1,2,3,[1,2],[1,5]];
+        var i =0;
         function addArr(arr1) {
-            var i =0;
             arr1.map(cell => {
-                if (typeof(cell) == Object) {
+                console.log(typeof(cell));
+                if (typeof(cell) == 'object') {
                     addArr(cell);
                 } else {
-                    i += cell;
+                    i = i + cell;
                 }
             })
-            return i;
+            // return i;
         }
-        console.log(addArr(arr));
+        // console.log(addArr(arr));
+        addArr(arr);
+        console.log(i);
+        console.log('test');
         
     </script>
 </body>
