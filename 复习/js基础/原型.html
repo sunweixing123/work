@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 直接定义obj
+        const obj1 = {};
+        const obj2 = {};
+        obj1.name = 'zhangsan';
+        obj1.age = 13;
+        obj2.name = 'lisi';
+        obj2.age = 15;
+        console.log(obj1);
+        console.log(obj2);
+        // obj1.protoType.eat = function() {
+        //     console.log('eat eat');
+        // }
+
+        // function 生成obj 在prototype下定义方法
+        function Obj(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Obj.prototype.eat = function() {
+            console.log('吃饭');
+        }
+
+        const Obj1 = new Obj('sun', 12);
+        console.log(Obj1);
+        Obj1.eat();
+
+        //构造函数的继承
+        
+    </script>
+</body>
+</html>
