@@ -8,16 +8,76 @@
 </head>
 <body>
     <script>
-        function deepCopy(c, p) {
-            p.map((cell, index) => {
-                if ( typeof(cell) === Object ) {
-                    c[index] = cell.constructor === Array ? [] : {};
-                    deepCopy(c[index], cell);
-                } else {
-                    c[index] = cell;
+        // function deepCopy(p, c) {
+        //     var c = c || {};
+        //     p.map((cell, index) => {  //map不能遍历对象
+        //         if ( typeof(cell) === Object ) {
+        //             c[index] = cell.constructor === Array ? [] : {};
+        //             deepCopy(c[index], cell);
+        //         } else {
+        //             c[index] = cell;
+        //         }
+        //     })
+        //     return c;
+        // }
+
+        // const Obj1 = {
+        //     name: 'lisi',
+        //     age: 14,
+        // };
+
+        // function copy(a, b) {
+        //     for (var i in b) {
+        //         a[i] = b[i];
+        //     }
+        //     return a;
+        // }
+
+        // const Obj3 = {};
+
+        // console.log(copy(Obj3, Obj1));
+
+        // Obj3.name = 'test';
+
+
+        // const Obj2 = Obj1;
+        // Obj2.name = 'test';
+        // console.log(Obj2);
+        // console.log(Obj1);
+
+        function deepCopy(p, c) { //正确的深拷贝
+          var c = c || {};
+            for (var i in p) {
+              if (typeof p[i] === 'object') {
+                c[i] = (p[i].constructor === Array) ? [] : {};
+                deepCopy(p[i], c[i]);
+            } else {
+                  c[i] = p[i];
                 }
-            })
-        }  
+          }
+          return c;
+        }
+
+        //浅拷贝  如果元素是对象则不能全部拷贝
+        // function Copy(p) {
+        //     const c = {};
+        //     for (var i in p) {
+        //         c[i] = p [i];
+        //     }
+        //     return c;
+        // }
+
+        const Animal = {
+            type: 'animal',
+            name: '666',
+        }
+
+        const Dog = Copy(Animal);
+
+        Dog.name = 'dog';
+
+        console.log(Dog);
+        console.log(Animal);
     </script>
 </body>
 </html>
