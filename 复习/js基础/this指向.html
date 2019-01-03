@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var x = 2;
+    //   function test() {
+    //     this.x = 1;
+    //     console.log("test函数" + this.x);
+    //   }
+    //   var o = new test();
+    //   console.log("o.x: " + o.x); //1
+    //   o.x = 3;
+    //   test();
+    //   x *= 10;
+    //   console.log("o.x: " + o.x); //3
+    //   console.log("x: " + x); //10
+
+    function animal() {
+      this.name = 'animal';
+      this.age = '15'
+    }
+
+    var Animal = new animal();
+
+
+    var cat = new animal();
+    console.log(cat.name, cat.age);
+    console.log(Animal.name, Animal.age);
+
+    cat.name = 'cat';
+    cat.age = 5;
+    console.log(cat.name, cat.age);
+    console.log(Animal.name, Animal.age);
+
+    </script>
+</body>
+</html>

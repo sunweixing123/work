@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .border {
+      width: 200px;
+      height: 200px;
+      background-color: #f00;
+      border-radius: 20px 40px 70px 100px;
+      margin: 30px 200px 500px;
+    }
+  </style>
+</head>
+<body>
+    <div class="border"></div>
+  <script>
+    // ==  和 ＝＝＝的区别
+    console.log('12' == 12); //会自动改变数据类型
+    console.log('12' === 12); //不会改变数据类型 
+    
+    var arr = [2,3,4,5,6];
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    }
+    console.log(sum); //20  就tm是相加
+
+    //border-radius  四个属性的分别对应的位置  以左上角为第一个， 其余和margin相同
+  </script>
+</body>
+</html>
