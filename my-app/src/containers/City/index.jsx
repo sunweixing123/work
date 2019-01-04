@@ -15,16 +15,6 @@ class City extends Component {
     componentDidMount() {
       console.log(this.props);
     }
-    // mapStateToProps(state) {
-    //     return {
-    //         userinfo: state.userinfo;
-    //     }
-    // }
-    // mapDispatchToProps() {
-    //     return {
-
-    //     }
-    // }
     callBack() {
       window.history.back()
     }
@@ -32,6 +22,7 @@ class City extends Component {
       if(newCity == null) {
         return;
       }
+      console.log(newCity); //newCity是cityList传的对应城市
       //修改redux
       const userinfo = this.props.userinfo;
       userinfo.cityName = newCity;
@@ -50,7 +41,6 @@ class City extends Component {
               <Header title="选择城市" />
               <div>{this.props.userinfo.cityName}</div>
               <CityList changeFn={this.changeCity} />
-
             </div>
         )
     }
