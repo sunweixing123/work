@@ -56,7 +56,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
+        userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch) //actions和dispatch结合
     }
 }
 export default connect(
