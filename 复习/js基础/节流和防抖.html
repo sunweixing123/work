@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 2000px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+  </div>
+  <script>
+     //防抖：在一定时间内，规定事件被触发的次数
+
+     //简单的防抖函数
+     function debounce(func, wait, immediate) {
+       var timeout; //定时器变量
+       return function() {
+         clearTimeout(timeout); //每次出发前，先清除定时器
+         timeout = setTimeout(func, wait);
+       }
+     }
+     function realFunc() { //实际绑定的函数
+       console.log('success');
+     }
+     // 采用了防抖动
+     window.addEventListener('scroll',debounce(realFunc,500)); //500毫秒内触发一次scroll事件时，才会执行realfunc函数
+     // 没采用防抖动
+     window.addEventListener('scroll',realFunc);
+
+     //封装好的防抖函数
+    //  function debounce(func, wait, immediate) {
+    //     var timeout;
+    //     return function () {
+    //       var context = this, args = arguments;
+    //       var later = function () {
+    //         timeout = null;
+    //         if (!immediate) func.apply(context, args);
+    //       };
+    //       var callNow = immediate && !timeout;
+    //       clearTimeout(timeout);
+    //       timeout = setTimeout(later, wait);
+    //       if (callNow) func.apply(context, args);
+    //     };
+    //   };
+
+    //   var myEfficientFn = debounce(function () {
+    //     // 滚动中的真正的操作
+    //   }, 250);
+
+    //   // 绑定监听
+    //   window.addEventListener('resize', myEfficientFn);
+     
+
+
+     
+     
+
+
+
+
+     //节流:只允许函数在一段时间内执行一次
+
+  </script>
+</body>
+</html>
