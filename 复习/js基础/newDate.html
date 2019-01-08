@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function newDate() {
+      var startTime = new Date();
+      console.log(startTime);
+      return function() {
+        var time = new Date();
+        if (time - startTime >= 2000) {
+          console.log(time, startTime);
+        }
+      }
+    }
+    newDate();  
+  </script>
+</body>
+</html>
