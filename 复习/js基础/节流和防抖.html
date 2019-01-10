@@ -110,6 +110,14 @@
           }
         }
 
+        //红宝书上的节流
+        function throttle(method, context) {
+            clearTimeout(method.tId);
+            method.tId = setTimeout(function () {
+              method.call(context);
+            }, 500);
+          }
+
 
   </script>
 </body>
