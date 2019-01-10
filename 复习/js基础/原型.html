@@ -35,7 +35,37 @@
         Obj1.eat();
 
         //构造函数的继承
-        
+
+        //使用 call apply bind
+        function animal() {
+            this.type = '动物';
+        }
+
+        function dog(name, age) {
+            // animal.apply(this); //继承animal构造函数
+            this.name = name;
+            this.age = age;
+        }
+
+        // const Dog = new dog('大黄', 9);
+        // console.log(Dog.type);
+
+        //使用prototype
+        dog.prototype = new animal(); 
+        //将Cat的prototype对象指向一个Animal的实例。
+        //它相当于完全删除了prototype 对象原先的值，然后赋予一个新值
+        dog.prototype.constructor = dog;
+        //任何一个prototype对象都有一个constructor属性，指向它的构造函数。
+        //如果没有"Cat.prototype = new Animal();"这一行，Cat.prototype.constructor是指向Cat的；
+        //加了这一行以后，Cat.prototype.constructor指向Animal。
+        //每一个实例也有一个constructor属性，默认调用prototype对象的constructor属性。
+        //因此，在运行"Cat.prototype = new Animal();"这一行之后，cat1.constructor也指向Animal！
+
+        const Dog = new dog();
+        console.log(Dog.type);
+
+
+
     </script>
 </body>
 </html>
