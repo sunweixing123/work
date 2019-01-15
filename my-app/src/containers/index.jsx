@@ -15,6 +15,7 @@ import Beauty from './beautifulDnd/BeautyDnd'
 import LocalStore from '../util/localStore'
 import {CITYNAME} from '../config/localStoreKey';
 
+
 class App extends Component {
   constructor(props, context) {
       super(props);
