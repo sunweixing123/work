@@ -15,6 +15,8 @@ import Beauty from './beautifulDnd/BeautyDnd'
 import LocalStore from '../util/localStore'
 import {CITYNAME} from '../config/localStoreKey';
 
+import ReduxTest from './Study/ReduxTest'
+
 
 class App extends Component {
   constructor(props, context) {
@@ -49,6 +51,7 @@ class App extends Component {
                           <Route path="/search" component={Search}></Route>
                           <Route path="/user" component={User}></Route>
                           <Route path="/dnd" component={Beauty}></Route>
+                          <Route path="/reduxtest" component={ReduxTest}></Route>
                           <Route component={NotFound}></Route>
                       </Switch>
                   </React.Fragment>

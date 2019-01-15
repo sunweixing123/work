@@ -1,4 +1,4 @@
-export function test1(data) {
+export function testUpdata(data) {
   return {
     type: 'test',
     data,
