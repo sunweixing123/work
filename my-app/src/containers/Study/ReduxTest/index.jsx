@@ -60,7 +60,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as userInfoActionsFromOtherFile from '../../../actions/userinfo'
+import * as Test1 from '../../../actions/test1'
 
 class City extends Component {
     constructor(props) {
@@ -68,8 +68,10 @@ class City extends Component {
     }
     componentDidMount() {
       console.log(this.props);
+      this.props.userInfoActions.testUpdata('test');
     }
     render() {
+        console.log(this.props);
         return (
             <div className="cityDetail">
               test
@@ -83,13 +85,13 @@ class City extends Component {
 function mapStateToProps(state) {
     console.log(state);
     return {
-        userinfo: state.userinfo
+        testData: state.test1
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch) //actions和dispatch结合
+        userInfoActions: bindActionCreators(Test1, dispatch) //actions和dispatch结合
     }
 }
 export default connect(

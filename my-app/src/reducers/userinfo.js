@@ -10,7 +10,9 @@ export default function userinfo(state = initialState, action) {
   switch (action.type) {
     case actionTypes.USERINFO_UPDATE:
       return action.data
-      default:
+    case 'test':
+      return 'success'
+    default:
       return state
   }
 }
