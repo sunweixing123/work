@@ -65,6 +65,7 @@ import * as userInfoActionsFromOtherFile from '../../../actions/userinfo'
 class City extends Component {
     constructor(props) {
       super(props);
+
     }
     componentDidMount() {
       console.log(this.props);
@@ -84,7 +85,7 @@ function mapStateToProps(state) {
     console.log(state);
     return {
         userinfo: state.userinfo
-    }
+    }//redux
 }
 
 function mapDispatchToProps(dispatch) {
