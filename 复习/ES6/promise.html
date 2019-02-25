@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function runAsync() {
+            var p = new Promise(function(resolve, reject) {
+                setTimeout(function(){
+                    console.log(23333);
+                    resolve('success');
+                }, 2000)
+            })
+            return p;
+        }
+        function runAsync2() {
+            var p = new Promise(function(resolve, reject) {
+                setTimeout(function(){
+                    console.log('runAsync2');
+                    resolve('runAsync2成功');
+                }, 2000)
+            })
+            return p;
+        }
+        function runAsync3() {
+            var p = new Promise(function(resolve, reject) {
+                setTimeout(function(){
+                    console.log('runAsync3');
+                    resolve('runAsync3成功');
+                    reject('失败');
+                }, 2000)
+            })
+            return p;
+        }
+        runAsync().then(function(data) {
+            console.log(data);
+            return runAsync2();
+        }).then(function(data) {
+            console.log(data);
+        }).catch(function() {
+
+        });
+        //then也可以接受两个参数（参数是function）  第一个参数是resolve 第二个是reject
+    </script>
+</body>
+</html>
