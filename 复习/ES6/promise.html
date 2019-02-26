@@ -22,7 +22,7 @@
                 setTimeout(function(){
                     console.log('runAsync2');
                     resolve('runAsync2成功');
-                }, 2000)
+                }, 4000)
             })
             return p;
         }
@@ -32,19 +32,39 @@
                     console.log('runAsync3');
                     resolve('runAsync3成功');
                     reject('失败');
-                }, 2000)
+                }, 6000)
             })
             return p;
         }
-        runAsync().then(function(data) {
-            console.log(data);
-            return runAsync2();
-        }).then(function(data) {
-            console.log(data);
-        }).catch(function() {
+        // runAsync().then(function(data) {
+        //     console.log(data);
+        //     return runAsync2();
+        // }).then(function(data) {
+        //     console.log(data);
+        // }).catch(function() {
 
-        });
+        // });
         //then也可以接受两个参数（参数是function）  第一个参数是resolve 第二个是reject
+
+        // async function Await() {
+        //     //await等待上一个执行成功后再执行下一个
+        //     const r1 = await runAsync();
+        //     const r2 = await runAsync2();
+        //     const r3 = await runAsync3();
+        // }
+        // Await();
+
+
+        //all方法，所有异步执行完毕后，结果在then中获取
+        // Promise.all([runAsync(), runAsync2(), runAsync3()]).then(function(results) {
+        //     console.log(results);
+        // })
+
+
+        //race方法，所有异步执行完毕后，结果在then中获取，只会输出最快执行完毕的异步
+        Promise.race([runAsync(), runAsync2(), runAsync3()]).then(function(results) {
+            console.log(results);
+        })
     </script>
 </body>
 </html>
