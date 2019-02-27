@@ -65,6 +65,14 @@
         Promise.race([runAsync(), runAsync2(), runAsync3()]).then(function(results) {
             console.log(results);
         })
+        async function Await() {
+            //await等待上一个执行成功后再执行下一个
+            const r1 = await runAsync();
+            const r2 = await runAsync2();
+            const r3 = await runAsync3();
+        }
+        Await();
+        //test
     </script>
 </body>
 </html>
