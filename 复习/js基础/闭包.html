@@ -23,6 +23,23 @@
       })(i) //i是参数
     }
 
+    // for (var i = 0; i < 5; ++i) {
+    //     (function (i) {
+    //       setTimeout(function () {
+    //         console.log(i + ' ');
+    //       }, 100);
+    //     }(i));
+    //   }
+
+    for (var i = 0; i < 5; ++i) {
+        // (function (i) {
+        //   console.log(i + ' ');
+        // }(i));
+        (function(i) {
+          console.log(i);
+        })(i);
+      }
+
 
     arr[0]();
     arr[1]();
