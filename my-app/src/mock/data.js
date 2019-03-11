@@ -26,7 +26,7 @@ router.get('/api/homed2', (ctx, next) => {
 
 const list = require('./home/list');
 router.get('/api/list', (ctx,next) => {
-  ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000'); //允许3000调用接口
   ctx.set('Access-Control-Allow-Credentials', 'true');
   ctx.body = list;
 })
