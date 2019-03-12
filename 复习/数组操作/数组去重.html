@@ -9,6 +9,7 @@
 <body>
   <script>
       var arr = [null, undefined, undefined, 0, '0', null, 7, '7']; //复杂度为n
+      const arr1 = [2,1,4,5,8,7,6];
 
       function fn(arr) {
         let obj = {};
@@ -18,6 +19,11 @@
         return Object.keys(obj)
     }
     console.log(fn(arr));  //返回key组成的数组
+
+    arr1.sort(function(a, b) {
+      return a - b;
+    })
+    console.log(arr1);
     </script>
 </body>
 </html>
