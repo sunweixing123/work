@@ -17,14 +17,14 @@
         // }
 
         Function.prototype.mybind = function () {
-            context = [].shift.call(arguments), // 保存需要绑定的this上下文
+            context = [].shift.call(arguments), // 保存需要绑定的this上下文,shift会返回数组第一个元素
             //https://blog.csdn.net/qq_27626333/article/details/51831282 关于context
-            console.log(context);
+            // console.log(context);
             args = [].slice.call(arguments);    // 剩余的参数转为数组
-            console.log(arguments);
-            console.log(context);
-            console.log(args);
-            console.log(this);
+            // console.log(arguments);
+            // console.log(context);
+            // console.log(args);
+            // console.log(this);
             return () => {                    // 返回一个新函数
                 this.apply(context,[].concat.call(args, [].slice.call(arguments)));
             }
@@ -46,6 +46,21 @@
         Cat.say.mybind(Dog, 'lalala')();
         //浏览器输入url后发生了什么
         //network里的参数
+
+        const arr2 = [2, 3, 5, 6];
+        console.log(arr2.includes(2));
+        console.log(arr2.includes(4));
+
+        var arr5 = ["a", "b", "c"];
+            var iterator = arr5.entries(); //创建一个可迭代对象，包含数组的键值对
+            for (let e of iterator) {
+                console.log(e);
+            }
+            let eArr = arr5.values();
+            console.log(eArr);
+            for (let letter of eArr) {
+            console.log(letter); //输出数组的每个元素
+            }
 
     </script>
 </body>
