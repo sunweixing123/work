@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function A() {
+            this.name = 'aa';
+            this.age = 'bb';
+        }
+        var AA = new A();
+        console.log(AA.__proto__ == A.prototype); //AA的构造函数是A
+        console.log(AA.__proto__.constructor);
+        console.log(A.prototype);
+        console.log(A.prototype.__proto__);
+        console.log(A.prototype.__proto__.constructor);
+        console.log(A.prototype.constructor);
+    </script>
+</body>
+</html>
