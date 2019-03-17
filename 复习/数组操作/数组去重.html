@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var arr = [null, undefined, undefined, 0, '0', null, 7, '7']; //复杂度为n
+      const arr1 = [2,1,4,5,8,7,6];
+
+      function fn(arr) {
+        let obj = {};
+        arr.forEach((item) => {
+            obj[item] = ''; //obj的key只有一个
+        })
+        return Object.keys(obj)
+    }
+    console.log(fn(arr));  //返回key组成的数组
+
+    arr1.sort(function(a, b) {
+      return a - b;
+    })
+    console.log(arr1);
+    </script>
+</body>
+</html>

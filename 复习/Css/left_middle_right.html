@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* .father {
+
+    } */
+    .left {
+      float: left;
+      height: 200px;
+      background-color: #f00;
+      width: 30%;
+    }
+    .right {
+      float: right;
+      height: 200px;
+      background-color: #000;
+      width: 30%;
+    }
+    .middle {
+      height: 200px;
+      width: 200px;
+      background-color: #00f;
+      margin-left: 30%;
+      /* 浮动会脱离文档流，所以要设置margin，不与left重合 */
+    }
+    .father1 {
+      display: flex;
+      /* flex-direction: row; */
+      justify-content: center;
+      width: 100%;
+      height: 300px;
+    }
+    .left1 {
+      height: 200px;
+      background-color: #f00;
+      /* width: 200px; */
+    }
+    .middle1 {
+      height: 200px;
+      width: 200px;
+      background-color: #00f;
+    }
+    .right1 {
+      height: 200px;
+      background-color: #000;
+      /* width: 200px; */
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="father"> -->
+    <div class="left"></div>
+   
+    <div class="right"></div>
+    <div class="middle"></div>
+  <!-- </div> -->
+
+  <!-- 弹性盒模型 -->
+    <div class="father1">
+        <div class="left1"></div>
+        <div class="middle1"></div>
+        <div class="right1"></div>
+    </div>
+</body>
+</html>
