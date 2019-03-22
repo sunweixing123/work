@@ -9,6 +9,8 @@
 <body>
     <script>
         var arr = [1,3,2,3,2,1,2,3,6];
+        var arr2 = [6, 7, 8];
+        var arr3 = [9, 10];
         //数组去重
         var arr1 = new Set(arr);
         console.log(Array.from(arr1));
@@ -32,6 +34,9 @@
             console.log(cell);
             console.log(index);
         })
+
+        console.log([].concat.call(arr, arr2, arr3));
+        console.log(arr.concat(arr2, arr3));
 
         //循环遍历
         //for in 和 for of 的区别：

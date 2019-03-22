@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arr = [1, 2, 3, 4, 7, 8, 9];
+    var maxSubArray = function (nums) {
+        let count = nums[0], maxCount = nums[0]
+        for (let i = 1; i < nums.length; i++) {
+          count = Math.max(count + nums[i], nums[i])
+          maxCount = Math.max(maxCount, count)
+        }
+        return maxCount
+      };
+      console.log(maxSubArray(arr));
+
+      var longestPalindrome = function (s) {
+          let maxLength = 0, left = 0, right = 0
+          for (let i = 0; i < s.length; i++) {
+            let singleCharLength = getPalLenByCenterChar(s, i, i)
+            let doubleCharLength = getPalLenByCenterChar(s, i, i + 1)
+            let max = Math.max(singleCharLength, doubleCharLength)
+            if (max > maxLength) {
+              maxLength = max
+              left = i - parseInt((max - 1) / 2)
+              right = i + parseInt(max / 2)
+            }
+          }
+          return s.slice(left, right + 1)
+        };
+
+        function getPalLenByCenterChar(s, left, right) {
+          // 中间值为两个字符，确保两个字符相等
+          if (s[left] != s[right]) {
+            return right - left
+          }
+          while (left > 0 && right < s.length - 1) {
+            left--
+            right++
+            if (s[left] != s[right]) {
+              return right - left - 1
+            }
+          }
+          return right - left + 1
+        }
+
+        console.log(longestPalindrome([1,2,2,2,1,2,3,3,3,3,3,3,3,2]));
+  </script>
+</body>
+</html>

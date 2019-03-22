@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var s = "aaaabbbbssssssss";
+    var fres = {};  //用来记录所有的字符的出现频次
+    var mostFreqChar = ''; //用来记录最大频次的字符
+    for (var i = 0; i < s.length; i++) {
+      var char = s[i];
+      if (!fres[char]) {
+        fres[char] = 0;
+      }
+
+      fres[char]++;
+      if (mostFreqChar == '' || fres[char] > fres[mostFreqChar]) {
+        mostFreqChar = char;
+      }
+
+    }
+
+
+    // function getMostArr(str) {
+    //     var fres = {};  //用来记录所有的字符的出现频次
+    //     var mostFreqChar = ''; //用来记录最大频次的字符
+    //     for (var i = 0; i < str.length; i++) {
+    //       var char = str[i];
+    //       if (!fres[char]) {
+    //         fres[char] = 0;
+    //       }
+
+    //       fres[char]++;
+    //       if (mostFreqChar == '' || fres[char] > fres[mostFreqChar]) {
+    //         mostFreqChar = char;
+    //       }
+
+    //     }
+    //     return mostFreqChar;
+    //   }
+
+    function getMostArr(str) {
+      let obj = {};
+      let mStr = '';
+      for (var i = 0; i < str.length; i++) {
+        var char = str[i];
+        if (!obj[char]) {
+          obj[char] = 0;
+        }
+        obj[char]++;
+        
+        if (mStr == '' || obj[mStr] < obj[char]) {
+          mStr = char;
+        }
+      }
+      return mStr;
+    }
+    // console.log(mostFreqChar);
+    // console.log(fres[mostFreqChar]);
+    console.log(getMostArr(s));
+
+  </script>
+</body>
+</html>
