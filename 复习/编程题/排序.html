@@ -5,8 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+   div:first-child{
+     
+   }
+
+   a:link    {color:blue;}
+a:visited {color:green;}
+a:hover   {color:red;}
+a:active  {color:yellow;}
+  </style>
+  
+
 </head>
 <body>
+  <a href="www.baidu.com">ssssss</a>
   <script>
     const arr = [9,3,2,7,6,1,4,5];
     function insertionSort(arr) {
@@ -66,11 +79,81 @@
       //       return quickSort(left).concat([pivot],quickSort(right));
       //   }      
 
-      console.log(quickSort(arr));
-      console.log(arr.splice(3, 1, 12, 13, 14)); //返回被删除的数组
-      console.log(arr.slice(6, 8)); //截取数组一部分，两个参数开始和结束的index，返回截取后的数组
-      console.log(arr);
-       
+      // console.log(quickSort(arr));
+      // console.log(arr.splice(3, 1, 12, 13, 14)); //返回被删除的数组
+      // console.log(arr.slice(6, 8)); //截取数组一部分，两个参数开始和结束的index，返回截取后的数组
+      // console.log(arr);
+
+      //冒泡排序
+      function maoPao(arr) {
+        const Len = arr.length;
+        for (let i = Len; i >= 2; i--) {
+          for (let j = 0; j < i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+              [arr[j+1], arr[j]] = [arr[j], arr[j+1]];
+            }
+          }
+        }
+        console.log(arr);
+      }
+      maoPao(arr);
+
+
+      //选择排序
+      //选择排序是从数组的开头开始，将第一个元素和其他元素作比较，
+      //检查完所有的元素后，最小的放在第一个位置，接下来再开始从第二个元素开始
+      //，重复以上一直到最后。
+      function checkSort(arr) { //
+        const Len = arr.length;
+        for (let i = 0; i < Len-1; i++) {
+          for (let j = i; j < Len; j++) {
+            if (arr[j] < arr[i]) {
+              [arr[j], arr[i]] = [arr[i], arr[j]];
+            }
+          }
+        }
+        console.log(arr);
+      }
+      checkSort(arr);
+
+      //插入排序
+      //
+      //
+      //
+      function chaRu(arr) {
+        const Len = arr.length;
+        for (let i = 1; i < Len; i++) {
+          for (let j = i; j > 0; j--) {
+            if (arr[j] < arr[j-1]) {
+              [arr[j], arr[j-1]] = [arr[j-1], arr[j]];
+            } else {
+              break;
+            }
+          }
+        }
+        console.log(arr);
+      }
+      chaRu(arr);
+
+      var arr1 = arr.filter(function(item) {
+        return item < 5;
+      })
+      console.log(arr1);
+      
+     
   </script>
+<!-- [if IE 6]>
+<script src=”DD_belatedPNG_0.0.8a.js”></script>
+<script>
+DD_belatedPNG.fix(‘*’);
+</script>
+<![endif]-->
+
+ <!-- [if IE 6]>
+    <script src=”DD_belatedPNG_0.0.8a.js”></script>
+<script>
+DD_belatedPNG.fix(‘*’);
+</script>
+    <![endif] -->
 </body>
 </html>
