@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // var obj = {
+
+    //     key: {
+
+    //         to: {
+
+    //             ok: 'okfe',
+
+    //             fe: ['hello', 'world']
+
+    //         }
+
+    //     },
+
+    //     target: [
+
+    //         1,
+
+    //         2,
+
+    //         {
+    //             ok: 'okfe'
+    //         },
+
+    //         'success'
+
+    //     ]
+
+    // };
+
+    // function getValue(key) {
+    //     const keyArr = key && key.split('.');
+    //     console.log(keyArr);
+    //     let value = '';
+    //     for (let i = 0; i < keyArr.length; i++) {
+    //         const val = keyArr[i];
+    //         value = obj[val]&&obj[val];
+    //     }
+    //     console.log(value);
+    //     return value;
+    // }
+    // getValue('key.to');
+
+    const arr = [1, 2, 3, 4];
+    console.log(arr.__proto__ == Array.prototype);
+    console.log(arr.__proto__ == arr.constructor.prototype);
+    console.log(arr.constructor == Array);
+    console.log(arr instanceof Array);
+</script>
+</body>
+</html>

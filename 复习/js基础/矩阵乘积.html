@@ -8,20 +8,19 @@
 </head>
 <body>
     <script>
-        console.log('233333');
-
-        function removeRepeat(str) {
-            var newStr = '';
-            var len = str.length;
+        function MatrixMul(a, b) {
+            var len = a.length, arr = [];
             for (var i = 0; i < len; i++) {
-                if (newStr.indexOf(str[i]) == -1) {
-                    newStr = newStr + str[i];
+                arr[i] = [];
+                for (var j = 0; j < len; j++) {
+                    arr[i][j] = 0;
+                    for (var k = 0; k < len; k++) {
+                        arr[i][j] += a[i][k] * b[k][j];
+                    }
                 }
             }
-            return newStr;
+            return arr;
         }
-        console.log(removeRepeat('AACCGGDDDSSty'));
-        </script>
-
+    </script>
 </body>
 </html>

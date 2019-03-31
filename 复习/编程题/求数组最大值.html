@@ -20,6 +20,7 @@
       console.log(maxSubArray(arr));
 
       var longestPalindrome = function (s) {
+<<<<<<< HEAD
           let maxLength = 0, left = 0, right = 0
           for (let i = 0; i < s.length; i++) {
             let singleCharLength = getPalLenByCenterChar(s, i, i)
@@ -38,15 +39,44 @@
           // 中间值为两个字符，确保两个字符相等
           if (s[left] != s[right]) {
             return right - left
+=======
+          let maxLength = 0, left = 0, right = 0;
+          for (let i = 0; i < s.length; i++) {
+            let singleCharLength = getPalLenByCenterChar(s, i, i);
+            // console.log(getPalLenByCenterChar(s, i, i));
+            let doubleCharLength = getPalLenByCenterChar(s, i, i + 1);
+            let max = Math.max(singleCharLength, doubleCharLength);
+            if (max > maxLength) {
+              maxLength = max;
+              left = i - parseInt((max - 1) / 2);
+              right = i + parseInt(max / 2);
+            }
+          }
+          return s.slice(left, right + 1);
+        };
+
+        function getPalLenByCenterChar(s, left, right) {
+          console.log(left, right);
+          // 中间值为两个字符，确保两个字符相等
+          if (s[left] != s[right]) {
+            return right - left;
+>>>>>>> 400af408a75914b36ed95898b81cb96db124f007
           }
           while (left > 0 && right < s.length - 1) {
             left--
             right++
             if (s[left] != s[right]) {
+<<<<<<< HEAD
               return right - left - 1
             }
           }
           return right - left + 1
+=======
+              return right - left - 1;
+            }
+          }
+          return right - left + 1;
+>>>>>>> 400af408a75914b36ed95898b81cb96db124f007
         }
 
         console.log(longestPalindrome([1,2,2,2,1,2,3,3,3,3,3,3,3,2]));

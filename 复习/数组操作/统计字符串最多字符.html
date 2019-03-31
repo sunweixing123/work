@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var s = "aaaabbbbssssssss";
+    var fres = {};  //用来记录所有的字符的出现频次
+    var mostFreqChar = ''; //用来记录最大频次的字符
+    for (var i = 0; i < s.length; i++) {
+      var char = s[i];
+      if (!fres[char]) {
+        fres[char] = 0;
+      }
+
+      fres[char]++;
+      if (mostFreqChar == '' || fres[char] > fres[mostFreqChar]) {
+        mostFreqChar = char;
+      }
+
+    }
+
+
+    // function getMostArr(str) {
+    //     var fres = {};  //用来记录所有的字符的出现频次
+    //     var mostFreqChar = ''; //用来记录最大频次的字符
+    //     for (var i = 0; i < str.length; i++) {
+    //       var char = str[i];
+    //       if (!fres[char]) {
+    //         fres[char] = 0;
+    //       }
+
+    //       fres[char]++;
+    //       if (mostFreqChar == '' || fres[char] > fres[mostFreqChar]) {
+    //         mostFreqChar = char;
+    //       }
+
+    //     }
+    //     return mostFreqChar;
+    //   }
+
+    function getMostArr(str) {
+      let obj = {};
+      let mStr = '';
+      for (var i = 0; i < str.length; i++) {
+        var char = str[i];
+        if (!obj[char]) {
+          obj[char] = 0;
+        }
+        obj[char]++;
+        
+        if (mStr == '' || obj[mStr] < obj[char]) {
+          mStr = char;
+        }
+      }
+      return mStr;
+    }
+    // console.log(mostFreqChar);
+    // console.log(fres[mostFreqChar]);
+    console.log(getMostArr(s));
+
+    const arr = [1, 2, 3, 4, 5, 6];
+    // arr.reduce(function(pre, current) {
+    //   console.log(pre);
+    //   console.log(current);
+    //   if (pre.min > current) {
+    //     pre.min = current;
+    //   }
+    //   if (pre.max < current) {
+    //     pre.max = current;
+    //   }
+    //   return pre;
+    // }, {min: arr[0], max: arr[0]})
+
+   console.log( arr.reduce(function(pre, current) {
+      pre = pre > current ? pre : current;
+      return pre;
+    }))
+
+    // let getMaxProfit = function getMaxProfit(arr) {
+    //     let max_min = arr.reduce(function (pre, current) {
+    //       console.log(pre, '--', current);
+    //       if (pre.min > current) {
+    //         pre.min = current;
+    //       }
+    //       if (pre.max < current) {
+    //         pre.max = current;
+    //       }
+    //       return pre;
+    //     }, { min: arr[0], max: arr[0] });
+
+    //     return max_min.max - max_min.min;
+    //   }
+      // console.log(getMaxProfit(arr));
+
+      console.log(Math.max.call(null, ...arr));
+      console.log(Math.max.apply(null, arr));
+
+      console.log(
+        arr.sort(function(a, b) {
+          return b-a;
+        })[0]
+      )
+  </script>
+</body>
+</html>
