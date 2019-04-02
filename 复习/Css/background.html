@@ -48,6 +48,31 @@
       delete context.fn();
       return result;
     }
+
+    //硬币面值问题
+
+    var coinChange = function (coins, amount) {
+        let max = amount + 1; //最大面值加1
+        let dp = new Array(amount + 1); //新建一个长度为max的数组
+        dp.fill(max); //dp被max填充，元素全部为max 
+        dp[0] = 0; //  dp:［0, 7, 7, 7, 7, 7, 7］
+
+        for (let i = 1; i < max; i++) {
+          for (let j = 0; j < coins.length; j++) { //coins [1,2,3]
+            if (coins[j] <= i) {
+              console.log(coins[j]);
+              console.log('i', i, dp[i], dp[i - coins[j]] + 1);
+              dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+            }
+          }
+        }
+        console.log(dp);
+        return dp[amount] > amount ? -1 : dp[amount];
+      };
+      console.log(coinChange([9, 2, 3], 6));
+      console.log(new Array(6));
+      const arr6 = new Array(5);
+      console.log(arr6.fill(5));
   </script>
 </body>
 </html>

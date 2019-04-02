@@ -27,6 +27,19 @@
           }))
         }
         flatten(arr);
+
+  function lizi2(prev, curr) {
+    return prev.concat(curr)
+  }
+
+  var arr2 = [[1, 2], [3, 4], [5, 6], [7]]
+  // 传initValue
+  var result2 = arr2.reduce(lizi2, []);
+  console.info('result2', result2);//输出 [1,2,3,4,5,6,7]
+  //不传initValue
+  var result3 = arr2.reduce(lizi2);
+
+  console.info('result3', result3);//输出 [1,2,3,4,5,6,7]
     </script>
 </body>
 </html>
