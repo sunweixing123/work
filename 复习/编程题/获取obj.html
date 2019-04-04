@@ -56,6 +56,21 @@
     console.log(arr.__proto__ == arr.constructor.prototype);
     console.log(arr.constructor == Array);
     console.log(arr instanceof Array);
+    console.log('undefined' == undefined);
+    console.log(null == undefined);
+    console.log(typeof 'undefined');
+    console.log(typeof undefined);
+    console.log(isNaN(NaN));
+    console.log(arr.map(item => {}));
+    console.log(Window);
+    console.log(Math);
+
+        function random() {
+            const ranNum = Math.random() * 7 + 3;// -> 0-7  怎么运行啊！！没用过这个
+            console.log(ranNum);//0-1
+        }
+
+        random();
 </script>
 </body>
 </html>
