@@ -8,8 +8,27 @@
     <style>
       .container {
         display: grid;
-        grid-template-columns: 100px 100px 100px;
-        grid-template-rows: 100px 100px 100px;
+        /* grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px; */
+
+        /* 设置列 */
+        grid-template-columns: repeat(3, 100px);
+        /* grid-template-columns: 1fr 1fr; */
+
+        /* 设置行 */
+        grid-template-rows: repeat(3, 100px);
+
+        /* 行间距 */
+        /* grid-row-gap: 20px; */
+
+        /* 列间距 */
+        /* grid-column-gap: 20px; */
+
+        grid-gap: 20px 20px;
+
+        grid-template-areas: 'a a a'
+                             'b b b'
+                             'c c c';
       }
       .table {
           /* width: 200px;
