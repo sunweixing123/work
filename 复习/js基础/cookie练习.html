@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(123);
+        console.log(document);
+        console.log(Document);
+        document.cookie = 'name=sunweixing';
+        console.log(document.cookie);
+
+         var setCookie = function (name, value, day) {
+         if(day !== 0){ //当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
+         var expires = day * 24 * 60 * 60 * 1000;
+         var date = new Date(+new Date()+expires);
+         document.cookie = name + "=" + escape(value) + ";expires=" + date.toUTCString();
+         }else{
+         document.cookie = name + "=" + escape(value);
+         }
+         };
+         setCookie('name', 'sun', 0);
+         console.log(document);
+         localStorage.setItem('myCat', 'Tom');
+         sessionStorage.setItem('name', 'sunweixnig');
+
+         document.cookie = "yummy_cookie=choco"; //cookie不生效是因为chrome禁止了
+         document.cookie = "tasty_cookie=strawberry"; 
+         console.log(document.cookie); 
+
+
+
+         sessionStorage.removeItem('name');
+         console.log(sessionStorage.getItem('name'));
+         console.log(localStorage.getItem('myCat'));
+    </script>
+</body>
+</html>
