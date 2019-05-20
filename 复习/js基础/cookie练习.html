@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="test"></div>
     <script>
+        const Otest = document.getElementById('test');
         console.log(123);
         console.log(document);
         console.log(Document);
@@ -37,6 +39,12 @@
          sessionStorage.removeItem('name');
          console.log(sessionStorage.getItem('name'));
          console.log(localStorage.getItem('myCat'));
+         const Div = document.createElement('div');
+        //  Div.innerHTML = sessionStorage.getItem('name');
+         Div.innerHTML = 'test';
+
+         document.body.appendChild(Div);
+        //  Otest.appendChild(Div);
     </script>
 </body>
 </html>
